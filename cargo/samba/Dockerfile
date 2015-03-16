@@ -13,8 +13,8 @@ RUN apt-get update                                                        && \
            >/etc/apt/apt.conf.d/70nosuggests                              && \
     apt-get -y install samba samba-common-bin                             && \
     groupadd -g 1000 data                                                 && \
-    useradd -c 'Tim Weber' -u 1000 -g 1000 scy                            && \
-    useradd -c 'File Server Data' -u 3000 -g 1000 data                    && \
+    useradd -c 'Tim Weber' -u 1000 -g data scy                            && \
+    useradd -c 'File Server Data' -u 3000 -g data data                    && \
     mkdir /srv/permanent /srv/volatile /srv/test                          && \
     chown data:data /srv/permanent /srv/volatile /srv/test                && \
     chmod 0775 /srv/permanent /srv/volatile /srv/test                     && \
